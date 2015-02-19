@@ -9,7 +9,7 @@
 
  * WARNING: this is a slightly modified version of mreps. The original version
  * should be downloaded from http://mreps.univ-mlv.fr/.
- * the aim of the modification is to have a lesser verbose output to 
+ * the aim of the modification is to have a less verbose output to 
  * accelerate the processing
  * 
  * mreps is released by the author under the GNU GPL licence (see LICENCE.md)

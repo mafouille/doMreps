@@ -1,13 +1,13 @@
-***************************************************************
-*                 This is doMreps verion 0.2                  *
-*                                                             *
-* released under GNU General Public Licence (see LICENCE.md)  *
-*                                                             *
-*                                                             *
-*      This program is a wrapper to the mreps program         *
-*                (http://mreps.univ-mlv.fr/)                  *
-*                                                             *
-***************************************************************
+    ***************************************************************
+    *                 This is doMreps verion 0.2                  *
+    *                                                             *
+    * released under GNU General Public Licence (see LICENCE.md)  *
+    *                                                             *
+    *                                                             *
+    *      This program is a wrapper to the mreps program         *
+    *                (http://mreps.univ-mlv.fr/)                  *
+    *                                                             *
+    ***************************************************************
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
  * WARNING: doMreps use a slightly modified version of mreps. 
  * The original version should be downloaded from 
  *  http://mreps.univ-mlv.fr/.
- * the aim of the modification is to have a lesser verbose output to 
- * accelerate the processing (or a more specific output)
+ * The aim of the modification was to have a less verbose output to 
+ * accelerate the processing (a more specific output for fastq data)
  * 
  * mreps is released by the author under the GNU GPL licence 
  *  (see LICENCE.md)
@@ -35,7 +35,7 @@
  *  and requires perl to be installed
 
 Usage:
-	perl doMreps.pl <list of fastq file>
+	perl doMreps.pl <list of fastq files>
 count occurrences of internal tandem duplication
 
 Examples:
@@ -56,8 +56,8 @@ AAGCCTGTGTGCTGTGTCCCACCTGCTGGGGAAGCCTCAGGGATGGGAGGGG	GATGGGAGGGGAAGCCTGTGT	GAAGC
 GGGGAAGCCTGTGTGCTGTGTCCCACCTGCTGGGGAAGCCTCGGGGATGGGA	CGGGGATGGGAGGGGAAGCCT	TGGGGAAGCCTCGGGGATGGGA	28	384	451
 
 
-Output description: Each time mreps find a new Internal Tandem Duplication (ITD), it display an 'F' (for forward read) or an 'R' (for Reverse read). 
-Then it display a tabular view of ITDs. 
+Output description: Each time mreps find a new Internal Tandem Duplication (ITD), it displays an 'F' (for Forward read) or an 'R' (for Reverse read). 
+Then it displays a tabular view of ITDs. 
   First line is the column header. 
   Second line is the total number of reads. 
   Then we have for each ITD sequence, 
