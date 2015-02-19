@@ -36,21 +36,21 @@
 ## MIN_READ_LENGTH to be processed
 ## small reads doesn't have full ITD and are spurious
 ## WARNING: 200 for PGM 400bp ; 130 for illumina 2x150bp
-my $MIN_READ_LENGTH=130
+my $MIN_READ_LENGTH=130;
 
 ## MREPS_BIN is the path to the mreps binary
 ## mreps has been very slighlty modified in order to have a less verbose output 
 ## and and easier output to parse.
-my $MREPS_BIN="./mreps"
+my $MREPS_BIN="./mreps";
 
 ## mreps_period is the minimal size of duplicated fragment in bp
 ## Smaller size give more "false positives" (germline duplicated DNA or random effect)
 ## WARNING: default is 20
-my $mreps_period=20
+my $mreps_period=20;
 
-## display the first '10 x number_of_fastq_file' repeats (ITD)
+## display the first '5 x number_of_fastq_file' repeats (ITD)
 ## WARNING: low count ITD will not be displayed if below this threshold
-my $max = @ARGV*10;
+my $max = @ARGV*5;
 
 
 use strict;
@@ -189,6 +189,7 @@ for (my $k=(@tri-1); $k >= 0 && $k >=(@tri-1-$max); $k--) {  ## $max repeats to 
    	print "\t".$repeats{$seq};
 
     foreach my $file (@ARGV) {
+	        ## "ITD"
 		my $nb=`grep -c $seed $file`;
 		my $revseed = reverse($seed);
 		$revseed =~ tr/ACGTacgt/TGCAtgca/;
@@ -202,14 +203,14 @@ for (my $k=(@tri-1); $k >= 0 && $k >=(@tri-1-$max); $k--) {  ## $max repeats to 
 		$nb+=`grep -c $revseed $file`;
 		print "\t$nb";
     }
-    foreach my $file (@ARGV) {
-		my $nb=`grep -c $seed $file`;
-		my $revseed = reverse($seed);
-		$revseed =~ tr/ACGTacgt/TGCAtgca/;
-		$nb+=`grep -c $revseed $file`;
-		$nb/=$count{$file};
-		print "\t$nb";
-   }
+##    foreach my $file (@ARGV) {
+##		my $nb=`grep -c $seed $file`;
+##		my $revseed = reverse($seed);
+##		$revseed =~ tr/ACGTacgt/TGCAtgca/;
+##		$nb+=`grep -c $revseed $file`;
+##		$nb/=$count{$file};
+##		print "\t$nb";
+##   }
     print "\n";
 
 }
